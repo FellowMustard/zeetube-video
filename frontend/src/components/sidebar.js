@@ -2,13 +2,20 @@ import { AiFillHome, AiOutlineCompass } from "react-icons/ai";
 import { BiPlayCircle } from "react-icons/bi";
 import { VscColorMode } from "react-icons/vsc";
 import { MdOndemandVideo, MdVideoLibrary } from "react-icons/md";
+import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="sidebar">
       <ul>
-        <li className="sidebar-list">
-          <AiFillHome className="sidebar-logo" />
-          <span>Home</span>
+        <li>
+          <Link
+            className="sidebar-list"
+            to="/"
+            style={{ textDecoration: "none" }}
+          >
+            <AiFillHome className="sidebar-logo" />
+            <span>Home</span>
+          </Link>
         </li>
         <li className="sidebar-list">
           <AiOutlineCompass className="sidebar-logo" />
