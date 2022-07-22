@@ -167,6 +167,13 @@ code {
 .sidebar-logo {
   font-size: 1.2rem;
 }
+.sidebar-big-container {
+  position: relative;
+  width: 70px;
+  top: 50px;
+  height: calc(100% - 50px);
+  display: flex;
+}
 .sidebar-big {
   position: fixed;
   width: 270px;
@@ -175,6 +182,17 @@ code {
   overflow-y: auto;
   overflow-x: hidden;
   top: 50px;
+  z-index: 10;
+  animation: openSidebar 0.5s ease forwards;
+}
+.sidebar-close {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .home-container {
   display: grid;
@@ -350,4 +368,106 @@ code {
   cursor: pointer;
   font-size: 1.1rem;
   fill: #fff;
+}
+.video-desc {
+  margin: 15px 0;
+  color: #fff;
+  font-size: 0.78rem;
+}
+.video-desc.more {
+  display: flex;
+  flex-direction: column;
+}
+.video-desc.hide {
+  display: flex;
+  flex-direction: row;
+}
+.readMore-hide {
+  background: transparent;
+  border: none;
+  color: #3a99e9;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.readMore-show {
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.bottom-border {
+  width: 100%;
+  border: 1px solid #303030;
+}
+.comment-section {
+  margin-top: 15px;
+}
+.comment-counter {
+  font-size: 1rem;
+  color: #fff;
+}
+.comment-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #292929;
+}
+.private-comment {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+}
+.private-textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 20px;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #fff;
+  align-self: center;
+  height: 20px;
+}
+.public-comment-container {
+  margin: 15px 0;
+}
+.public-comment {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.comment-info-top {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+}
+.comment-timeline {
+  font-weight: 400;
+  font-size: 0.65rem;
+  margin-left: 5px;
+  color: #858585;
+}
+.comment-info-bottom {
+  color: #fff;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+@keyframes openSidebar {
+  0% {
+    transform: translateX(-270px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }

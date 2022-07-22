@@ -1,7 +1,13 @@
+import React, { useState } from "react";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
-import { BiLike, BiDislike } from "react-icons/bi";
+import { BiLike, BiDislike, BiShare } from "react-icons/bi";
+import Comments from "../components/comments";
 
 function Video() {
+  const [readMore, setReadMore] = useState(false);
+  const [videoDesc, setVideoDesc] = useState(
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et turpis non lorem venenatis ullamcorper eu in sem. Nulla sit amet metus at turpis blandit posuere sed nec nunc. Sed vehicula ullamcorper sapien. In sed diam quis ligula mattis rutrum volutpat sollicitudin libero. Phasellus nec eleifend quam. Donec hendrerit lacus sed elementum lobortis. Curabitur sit amet metus sem. Vivamus ultrices tellus aliquam tortor venenatis luctus eget ac enim. Quisque a lorem eu tellus tincidunt ultricies. Mauris a viverra est. Vestibulum pulvinar nunc eget rhoncus ultricies. "
+  );
   return (
     <div className="video-content">
       <section className="media-section">
@@ -43,8 +49,25 @@ function Video() {
               <BiDislike className="thumb-main" />
               <span>28</span>
             </div>
+            <div className="video-interact-button">
+              <BiShare className="thumb-main" />
+              <span>Share</span>
+            </div>
           </div>
         </div>
+        <div className={`video-desc ${readMore ? "more" : "less"}`}>
+          {readMore ? videoDesc : `${videoDesc.substring(0, 80)}`}
+          {videoDesc.length > 80 && (
+            <button
+              className={`${readMore ? "readMore-show" : "readMore-hide"}`}
+              onClick={() => setReadMore(!readMore)}
+            >
+              {readMore ? "Read Less" : "...Read More"}
+            </button>
+          )}
+        </div>
+        <div className="bottom-border"></div>
+        <Comments />
       </section>
       <section className="recommendation-section"></section>
     </div>

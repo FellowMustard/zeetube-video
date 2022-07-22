@@ -1,5 +1,6 @@
 import { BiMenu, BiUserCircle } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 function Navbar({ handleSidebarOpen }) {
   return (
@@ -8,7 +9,9 @@ function Navbar({ handleSidebarOpen }) {
         <button className="navbar-icon" onClick={() => handleSidebarOpen()}>
           <BiMenu />
         </button>
-        <p className="zeetube">ZeeTube</p>
+        <Link className="zeetube" to="/" style={{ textDecoration: "none" }}>
+          ZeeTube
+        </Link>
       </div>
 
       <div className="navbar-center search-container">

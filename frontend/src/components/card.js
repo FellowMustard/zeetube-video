@@ -31,6 +31,7 @@ function Card() {
               <span style={{ fontSize: "0.4rem" }}>●</span>
               <span>1 Days ago</span>
             </p>
+            
           </div>
         </div>
       </section>

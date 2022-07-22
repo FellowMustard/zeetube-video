@@ -17,7 +17,7 @@ function App() {
         <Navbar handleSidebarOpen={handleSidebarOpen} />
         <div className="content">
           {!sidebarOpen && <Sidebar />}
-          {sidebarOpen && <SidebarBig />}
+          {sidebarOpen && <SidebarBig handleSidebarOpen={handleSidebarOpen} />}
           <div className="main-content">
             <Routes>
               <Route exact path="/" element={<Home />} />
